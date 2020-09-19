@@ -9,16 +9,22 @@ export const CountryDetails = () => {
   const details = useSelector((state) => state.countries.countryDetails)
   const errorMessage = useSelector((state) => state.countries.errorMessage)
   const itemNotFound = errorMessage === 400
+  const currency = details.currencies
+  console.log(currency)
+
+  console.log(details.currencies)
 
   useEffect(() => {
     dispatch(getCountryDetails(alpha3Code))
   }, [alpha3Code, dispatch]);
 
-  console.log(details)
-
   return (
     <div>
-      {details && <p>{details.name}</p>}
+      {details && <div>
+        <p>{details.name} {details.capital} {details.population}</p>
+
+      </div>}
+
       {itemNotFound && <p>Sorry no info about this country. Try another country!</p>}
     </div>
   )

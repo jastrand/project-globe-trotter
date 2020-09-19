@@ -42,9 +42,6 @@ export const getCountryList = () => {
       })
       .then((json) => {
         dispatch(countries.actions.setCountryList(json))
-        console.log(json)
-        console.log(json.length)
-        console.log(json.body)
       })
   }
 }
