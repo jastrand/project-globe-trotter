@@ -1,6 +1,7 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { getCountryList } from 'reducers/countryStore'
+import { CountryItem } from 'components/CountryItem'
 /*
 
   1. CountryList will map through all of the items from the redux country array.
@@ -11,7 +12,8 @@ import { getCountryList } from 'reducers/countryStore'
 export const CountryList = () => {
   const dispatch = useDispatch()
   const countries = useSelector((store) => store.countries.countryList)
-  console.log(countries)
+  const [searchWord, setSearchWord] = useState('');
+  const [filteredList, setFilteredList] = useState([]);
 
   useEffect(() => {
     if (countries.length) {
@@ -20,15 +22,23 @@ export const CountryList = () => {
     dispatch(getCountryList())
   }, [dispatch, countries])
 
+  useEffect(() => {
+    setFilteredList(
+      countries.filter((country) => country.name.toLowerCase().includes(searchWord.toLowerCase()))
+    );
+  }, [searchWord, countries]);
+
   return (
-    <div>
-      {countries &&
-        <div>
-          {countries.map((country, i) => (
-            <p key={i}>{country.name}</p>
-          ))}
-        </div>
-      }
-    </div>
+    <>
+      <div>
+        <input
+          type="text"
+          placeholder="Search country"
+          onChange={(e) => setSearchWord(e.target.value)} />
+        {filteredList.map((country, i) => (
+          <CountryItem key={i} country={country} />
+        ))}
+      </div>
+    </>
   )
 }

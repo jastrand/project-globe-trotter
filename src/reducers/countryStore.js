@@ -13,11 +13,19 @@ import { createSlice } from '@reduxjs/toolkit'
 export const countries = createSlice({
   name: 'countries',
   initialState: {
-    countryList: []
+    countryList: [],
+    countryDetails: {},
+    errorMessage: {}
   },
   reducers: {
     setCountryList: (state, action) => {
       state.countryList = action.payload
+    },
+    setCountryDetails: (state, action) => {
+      state.countryDetails = action.payload
+    },
+    setErrorMessage: (state, action) => {
+      state.errorMessage = action.payload
     }
   }
 })
@@ -37,6 +45,24 @@ export const getCountryList = () => {
         console.log(json)
         console.log(json.length)
         console.log(json.body)
+      })
+  }
+}
+
+export const getCountryDetails = (alpha3Code) => {
+  const DETAILS_URL = `https://restcountries.eu/rest/v2/alpha/${alpha3Code}`
+  return (dispatch) => {
+    fetch(DETAILS_URL)
+      .then((res) => {
+        if (res.ok) {
+          return res.json()
+        } else {
+          dispatch(countries.actions.setErrorMessage(res.status))
+        }
+      })
+      .then((json) => {
+        dispatch(countries.actions.setCountryDetails(json))
+        console.log(json)
       })
   }
 }

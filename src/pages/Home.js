@@ -5,6 +5,7 @@ import { countries } from 'reducers/countryStore'
 import { combineReducers, createStore, applyMiddleware, compose } from '@reduxjs/toolkit'
 import thunk from 'redux-thunk'
 import { CountryList } from 'components/CountryList'
+import { CountryDetails } from './CountryDetails'
 /*
   1. Home will be the main page which will take care of setting up the redux store and routes.
   2. Home will be rendered in the app component.
@@ -51,6 +52,9 @@ export const Home = () => {
         <Switch>
           <Route path="/" exact>
             <CountryList />
+          </Route>
+          <Route path="/country/:alpha3Code" exact>
+            <CountryDetails />
           </Route>
         </Switch>
       </BrowserRouter>
