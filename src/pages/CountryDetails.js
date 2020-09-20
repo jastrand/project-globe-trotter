@@ -49,6 +49,7 @@ const Container = styled.div`
     justify-content: center;
     align-items: center;
     font-family: 'Poppins', sans-serif;
+    padding: 10px;
   `
 
 const StyledLink = styled(Link)`
@@ -68,4 +69,8 @@ const StyledLink = styled(Link)`
 
 export const Text = styled.p`
   font-size: 3rem;
+
+  @media (max-width: 700px) {
+    font-size: 2rem; 
+  }
 `

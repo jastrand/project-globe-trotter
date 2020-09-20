@@ -30,8 +30,14 @@ export const ConverterInput = ({ toNum, currencyArr, code }) => {
 }
 
 const Input = styled.input`
-  width: 30%;
+  width: 50%;
   height: 4rem;
   border: none;
+  border-radius: 22px;
+  padding-left: 15px;
 
+  &&:focus {
+    box-shadow: 0 0 3pt 2pt grey;
+    outline: none;
+  }
 `

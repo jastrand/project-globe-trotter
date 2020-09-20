@@ -70,13 +70,17 @@ const Title = styled.h1`
   padding: 2rem;
 
   @media (max-width: 700px) {
-    font-size: 4rem; 
+    font-size: 2rem; 
   }
 `
 const SubTitle = styled.h1`
   font-size: 3rem;
   margin: 0;
   padding: 2rem;
+
+  @media (max-width: 700px) {
+    font-size: 2rem; 
+  }
 `
 
 const Input = styled.input`
@@ -98,7 +102,8 @@ const Input = styled.input`
   }
 
   &&:focus {
-    outline-color: darkslategrey;
+    box-shadow: 0 0 3pt 2pt grey;
+    outline: none;
   }
 
   @media (max-width: 700px) {
