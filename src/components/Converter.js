@@ -2,16 +2,15 @@ import React, { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { getCurrency } from 'reducers/countryStore'
 import { ConverterInput } from 'components/ConverterInput'
+import { coinIcon } from 'assets/FontAwesome'
+import { Text } from 'pages/CountryDetails'
 
-export const Converter = ({ code, name, currArray }) => {
+export const Converter = ({ code, name, currencyArr }) => {
   const dispatch = useDispatch()
   const codeToString = code.toString().split(',').join('')
-  const filiteredArray = currArray.filter((curr) => curr.includes(codeToString))
+  const filiteredArray = currencyArr.filter((curr) => curr.includes(codeToString))
   const arr = filiteredArray.toString().substring(4)
   const toNum = Number(arr)
-  console.log(currArray)
-  const todaysEuro = currArray.filter((curr) => curr.includes('EUR'))
-  console.log(todaysEuro)
 
   useEffect(() => {
     dispatch(getCurrency())
@@ -19,9 +18,8 @@ export const Converter = ({ code, name, currArray }) => {
 
   return (
     <div>
-      <p>{name} {code}</p>
-      <p>{toNum}</p>
-      <ConverterInput toNum={toNum} />
+      <Text>{coinIcon} {code}/{name}</Text>
+      <ConverterInput code={code} toNum={toNum} currencyArr={currencyArr} />
     </div>
   )
 }

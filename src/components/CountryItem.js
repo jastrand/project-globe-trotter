@@ -33,4 +33,8 @@ const StyledLink = styled(Link)`
   margin: 0.2rem;
   width: 30%;
   text-decoration: none;
+
+  @media (max-width: 700px) {
+    width: 50%;
+  }
 `

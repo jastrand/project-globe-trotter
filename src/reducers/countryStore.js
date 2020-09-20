@@ -62,15 +62,15 @@ export const getCountryDetails = (alpha3Code) => {
         }
       })
       .then((json) => {
+        dispatch(countries.actions.setErrorMessage(''))
         dispatch(countries.actions.setCountryDetails(json))
-        console.log(json)
       })
   }
 }
 
 export const getCurrency = () => {
-  const API_KEY = 'f11aa04b4be4077483319a727aed9ec7'
-  const CURRENCY_URL = `http://data.fixer.io/api/latest?access_key=${API_KEY}`
+  const secretKey = 'f11aa04b4be4077483319a727aed9ec7'
+  const CURRENCY_URL = `http://data.fixer.io/api/latest?access_key=${secretKey}`
   return (dispatch) => {
     fetch(CURRENCY_URL)
       .then((res) => {

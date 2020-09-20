@@ -68,6 +68,10 @@ const Title = styled.h1`
   font-size: 5rem;
   margin: 0;
   padding: 2rem;
+
+  @media (max-width: 700px) {
+    font-size: 4rem; 
+  }
 `
 const SubTitle = styled.h1`
   font-size: 3rem;
@@ -76,7 +80,7 @@ const SubTitle = styled.h1`
 `
 
 const Input = styled.input`
-  width: 50%;
+  width: 40%;
   padding: 1rem;
   background-color: whitesmoke;
   border: none;
@@ -95,5 +99,9 @@ const Input = styled.input`
 
   &&:focus {
     outline-color: darkslategrey;
+  }
+
+  @media (max-width: 700px) {
+    width: 60%;
   }
 `
