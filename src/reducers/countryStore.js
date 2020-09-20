@@ -15,7 +15,8 @@ export const countries = createSlice({
   initialState: {
     countryList: [],
     countryDetails: {},
-    errorMessage: {}
+    errorMessage: {},
+    currency: {}
   },
   reducers: {
     setCountryList: (state, action) => {
@@ -26,6 +27,9 @@ export const countries = createSlice({
     },
     setErrorMessage: (state, action) => {
       state.errorMessage = action.payload
+    },
+    setCurrency: (state, action) => {
+      state.currency = action.payload
     }
   }
 })
@@ -60,6 +64,24 @@ export const getCountryDetails = (alpha3Code) => {
       .then((json) => {
         dispatch(countries.actions.setCountryDetails(json))
         console.log(json)
+      })
+  }
+}
+
+export const getCurrency = () => {
+  const API_KEY = 'f11aa04b4be4077483319a727aed9ec7'
+  const CURRENCY_URL = `http://data.fixer.io/api/latest?access_key=${API_KEY}`
+  return (dispatch) => {
+    fetch(CURRENCY_URL)
+      .then((res) => {
+        if (res.ok) {
+          return res.json()
+        } else {
+          dispatch(countries.actions.setErrorMessage(res.status))
+        }
+      })
+      .then((json) => {
+        dispatch(countries.actions.setCurrency(json.rates))
       })
   }
 }

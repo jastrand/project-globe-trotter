@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { getCountryList } from 'reducers/countryStore'
 import { CountryItem } from 'components/CountryItem'
+import styled from 'styled-components'
+import search from 'assets/search.svg';
 /*
 
   1. CountryList will map through all of the items from the redux country array.
@@ -25,20 +27,73 @@ export const CountryList = () => {
   useEffect(() => {
     setFilteredList(
       countries.filter((country) => country.name.toLowerCase().includes(searchWord.toLowerCase()))
-    );
+    )
   }, [searchWord, countries]);
 
   return (
     <>
-      <div>
-        <input
+      <Section>
+        <TextWrapper>
+          <Title>Hello Globetrotter <span role="img" aria-label="Globe">🌎</span> </Title>
+          <SubTitle>Where are you going next?</SubTitle>
+        </TextWrapper>
+        <Input
           type="text"
           placeholder="Search country"
           onChange={(e) => setSearchWord(e.target.value)} />
         {filteredList.map((country, i) => (
           <CountryItem key={i} country={country} />
         ))}
-      </div>
+      </Section>
     </>
   )
 }
+
+const Section = styled.section`
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center;
+`
+const TextWrapper = styled.section`
+  height: 40vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Poppins', sans-serif;
+`
+
+const Title = styled.h1`
+  font-size: 5rem;
+  margin: 0;
+  padding: 2rem;
+`
+const SubTitle = styled.h1`
+  font-size: 3rem;
+  margin: 0;
+  padding: 2rem;
+`
+
+const Input = styled.input`
+  width: 50%;
+  padding: 1rem;
+  background-color: whitesmoke;
+  border: none;
+  border-radius: 22px;
+  height: 2rem;
+  font-size: 2rem;
+  margin-bottom: 3rem;
+  background-image: url(${search});
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  padding-left: 40px;
+
+  &&:textarea {
+    padding: 1rem;
+  }
+
+  &&:focus {
+    outline-color: darkslategrey;
+  }
+`
