@@ -15,7 +15,7 @@ export const CountryDetails = () => {
   const currency = details.currencies
   /* eslint-disable */
   const numeral = require('numeral')
-  const changer = numeral(details.population).format('0.0a')
+  const population = numeral(details.population).format('0.0a')
 
   useEffect(() => {
     dispatch(getCountryDetails(alpha3Code))
@@ -31,7 +31,7 @@ export const CountryDetails = () => {
       {details && <div>
         <Text>{locationIcon} {details.name}, also called {details.nativeName}</Text>
         <Text>{capitalIcon} Capital: {details.capital}</Text>
-        <Text>{populationIcon} {changer}</Text>
+        <Text>{populationIcon} {population}</Text>
         {currency && <Converter
           name={Object.values(currency[0].name)}
           code={Object.values(currency[0].code)}
@@ -50,14 +50,14 @@ const Container = styled.div`
     align-items: center;
     font-family: 'Poppins', sans-serif;
     padding: 10px;
-  `
+`
 
 const StyledLink = styled(Link)`
   text-decoration: none;
   text-transform: uppercase; 
   color: #000;
   align-self: flex-start;
-  margin: 2rem;
+  margin: 1.5rem;
   font-size: 2rem;
   font-weight: bold;
 
@@ -69,6 +69,7 @@ const StyledLink = styled(Link)`
 
 export const Text = styled.p`
   font-size: 3rem;
+  max-width: 500px;
 
   @media (max-width: 700px) {
     font-size: 2rem; 

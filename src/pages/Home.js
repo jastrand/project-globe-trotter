@@ -6,14 +6,10 @@ import { combineReducers, createStore, applyMiddleware, compose } from '@reduxjs
 import thunk from 'redux-thunk'
 import { CountryList } from 'components/CountryList'
 import { CountryDetails } from './CountryDetails'
+
 /*
   1. Home will be the main page which will take care of setting up the redux store and routes.
   2. Home will be rendered in the app component.
-
-  Todo:
-  Set up browser router
-  Set up the store
-
  */
 
 const reducer = combineReducers({
@@ -23,7 +19,7 @@ const reducer = combineReducers({
 const saveToLocalStorage = (state) => {
   try {
     const serializedState = JSON.stringify(state);
-    localStorage.setItem('cryptos-reduxState', serializedState);
+    localStorage.setItem('countries-reduxState', serializedState);
   } catch (e) {
     console.log(e);
   }

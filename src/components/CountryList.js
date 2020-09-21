@@ -34,7 +34,7 @@ export const CountryList = () => {
     <>
       <Section>
         <TextWrapper>
-          <Title>Hello Globetrotter <span role="img" aria-label="Globe">🌎</span> </Title>
+          <Title>Hey Globetrotter <span role="img" aria-label="Globe">🌎</span> </Title>
           <SubTitle>Where are you going next?</SubTitle>
         </TextWrapper>
         <Input

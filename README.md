@@ -9,7 +9,10 @@ To run the code locally:
 
 ## View it live: 
 
-## If I had more time... 
+## If I had more time...
+Loading state
+Error handle
+Data from library like d3 
 
 ## The requirements
 Create a simple web interface using React which allows users to: 
