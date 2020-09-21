@@ -19,7 +19,9 @@ export const ConverterInput = ({ toNum, currencyArr, code }) => {
   // use the calculated and return a number with only 2 decimals for readability
   const convertedSEK = Math.round(num * 100 + Number.EPSILON) / 100
 
-  console.log(convertedSEK)
+  const newSEK = Number(convertedSEK)
+
+  console.log(typeof newSEK)
 
   return (
     <div>
