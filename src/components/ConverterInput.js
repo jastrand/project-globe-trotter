@@ -15,13 +15,7 @@ export const ConverterInput = ({ toNum, currencyArr, code }) => {
   }
 
   // invoke the calculateAmount function with this constant, and limit to 2 decimals
-  const num = calculateAmount()
-  // use the calculated and return a number with only 2 decimals for readability
-  const convertedSEK = Math.round(num * 100 + Number.EPSILON) / 100
-
-  const newSEK = Number(convertedSEK)
-
-  console.log(typeof newSEK)
+  const convertedSEK = calculateAmount().toFixed(2)
 
   return (
     <div>

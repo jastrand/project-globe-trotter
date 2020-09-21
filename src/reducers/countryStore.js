@@ -69,6 +69,7 @@ export const getCountryDetails = (alpha3Code) => {
 
 export const getCurrency = () => {
   const secretKey = process.env.REACT_APP_access_key
+  console.log(secretKey)
   const CURRENCY_URL = `http://data.fixer.io/api/latest?access_key=${secretKey}`
   return (dispatch) => {
     fetch(CURRENCY_URL)
@@ -80,6 +81,7 @@ export const getCurrency = () => {
         }
       })
       .then((json) => {
+        console.log(json.rates)
         dispatch(countries.actions.setCurrency(json.rates))
       })
   }
