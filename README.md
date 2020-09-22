@@ -16,13 +16,14 @@ Not to overcomplicate things, I decided to follow the API suggestions provided a
 
 
 ## If I had more time with this project:
-I started to implement a logic for error handling of the API responses, however I did not spend a lot of time and thought to make it perfect. Would definitely develop this better with more time. 
 
-It would be super cool to display some exchange rate data over time for each country. This could be done with libraries like d3.js to give the user the chance to interact with the data as well. 
+- I started to implement a logic to deal with errors from the API responses. However this logic could be improved after some more thought and time spent on it.
 
-I would probably implemented a loading state for a better user experience if the API responses are slow. 
+- It would be super cool to display some exchange rate data over time for each country. This could be done with libraries like d3.js to give the user the chance to interact with the data as well. 
 
-To be completely honest, I would either change API for the currency or paying for a plan with fixer.io as the free version only allows traffic over HTTP. I really wanted to deploy this project and send you a live version of it. However, netlify the service I have been using a lot only serves content over HTTPS. I managed to have the site deployed, however one of the main features the currency convertor is not working as it’s logic is based on the fetch from an HTTP API. (https://youthful-roentgen-968461.netlify.app/)
+- Loading state for a better user experience if the API responses are slow. 
+
+- To be completely honest, I would either change API for the currency or paying for a plan with fixer.io because the free version only allows traffic over HTTP. I really wanted to deploy this project and send you a live version of it - However, Netlify which is the service I have been using a lot only serves content over HTTPS. I managed to have the site deployed, however one of the main features the currency converter is not working as it’s logic is based on the fetch from an HTTP API. (https://youthful-roentgen-968461.netlify.app/)
 
 ## The requirements
 Create a simple web interface using React which allows users to: 
