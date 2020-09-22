@@ -2,6 +2,7 @@
 
 Welcome to Globetrotter! This app lets you search for countries, click on each country to explore details like population and capital. The app also offers daily currency exchange from SEK to any given currency. 
 
+
 ## Run the code
 1) Git clone
 2) npm install 
@@ -23,7 +24,7 @@ Not to overcomplicate things, I decided to follow the API suggestions provided a
 
 - Loading state for a better user experience if the API responses are slow. 
 
-- To be completely honest, I would either change API for the currency or paying for a plan with fixer.io because the free version only allows traffic over HTTP. I really wanted to deploy this project and send you a live version of it - However, Netlify which is the service I have been using a lot only serves content over HTTPS. I managed to have the site deployed, however one of the main features "Currency Converter" is not working as it’s logic is based on the fetch from an HTTP API. (https://youthful-roentgen-968461.netlify.app/) - I noticed this way too late in the process. 
+- To be completely honest, I would either change API for the currency or paying for a plan with fixer.io because the free version only allows traffic over HTTP. I really wanted to deploy this project and send you a live version of it - However, Netlify which is the service I have been using a lot only serves content over HTTPS. I managed to have the site deployed, however one of the main features "Currency Converter" is not working as it’s logic is based on the fetch from an HTTP API. This is probably something I should have noticed much earlier in the process. You can view everything else apart from that feature here: https://youthful-roentgen-968461.netlify.app/
 
 ## The requirements
 Create a simple web interface using React which allows users to: 
