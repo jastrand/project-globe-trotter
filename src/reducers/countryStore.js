@@ -5,7 +5,7 @@ import { createSlice } from '@reduxjs/toolkit'
 1. This reducer will store the country and currency values from the API's.
 2. A list of countries will be availale and will be populated by the payload from thunks.
 3. First thunk will fetch a complete list of countries
-4. Secong thunk will fetch details about each country with help from useParams.
+4. Second thunk will fetch details about each country with help from useParams.
 5. Third thunk will fetch the latest currency exchange from each country.
 
 */
@@ -69,7 +69,6 @@ export const getCountryDetails = (alpha3Code) => {
 
 export const getCurrency = () => {
   const secretKey = process.env.REACT_APP_access_key
-  console.log(secretKey)
   const CURRENCY_URL = `http://data.fixer.io/api/latest?access_key=${secretKey}`
   return (dispatch) => {
     fetch(CURRENCY_URL)
@@ -81,7 +80,6 @@ export const getCurrency = () => {
         }
       })
       .then((json) => {
-        console.log(json.rates)
         dispatch(countries.actions.setCurrency(json.rates))
       })
   }

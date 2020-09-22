@@ -7,7 +7,8 @@ import search from 'assets/search.svg';
 /*
 
   1. CountryList will map through all of the items from the redux country array.
-  2. The values will later be used in a searchBar component.
+  2. Text Input with help from useState will let the user search for a country
+  3. The mapped values can then be used in the component called CountryItem.
 
  */
 
@@ -17,6 +18,9 @@ export const CountryList = () => {
   const [searchWord, setSearchWord] = useState('');
   const [filteredList, setFilteredList] = useState([]);
 
+  // fetch all the countries after render if empty array.
+  // If countries are already fetched only return to optimize page load and speed.
+
   useEffect(() => {
     if (countries.length) {
       return;
@@ -24,6 +28,8 @@ export const CountryList = () => {
     dispatch(getCountryList())
   }, [dispatch, countries])
 
+  // filiter the list of countries depending on the searchWord state
+  // toLowerCase so users can search both in upper- and lowercase.
   useEffect(() => {
     setFilteredList(
       countries.filter((country) => country.name.toLowerCase().includes(searchWord.toLowerCase()))

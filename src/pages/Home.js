@@ -8,9 +8,11 @@ import { CountryList } from 'components/CountryList'
 import { CountryDetails } from './CountryDetails'
 
 /*
-  1. Home will be the main page which will take care of setting up the redux store and routes.
-  2. Home will be rendered in the app component.
- */
+
+  1. Home is the main page. Routes and redux store for the enitre app is set up here.
+  2. Home is rendered in App.js
+
+*/
 
 const reducer = combineReducers({
   countries: countries.reducer

@@ -4,17 +4,24 @@ import { Text } from 'pages/CountryDetails'
 
 export const ConverterInput = ({ toNum, currencyArr, code }) => {
   const [convert, setConvert] = useState('')
+
+  // todaysSEK returns array like [SEK, 10.404]
   const todaysSEK = currencyArr.filter((curr) => curr.includes('SEK'))
+  // keep only the value here and remove the word "SEK", example: 10.404
   const removeLetters = todaysSEK.toString().substring(4)
+  // convert into a number so we can to math with it
   const sekToNumber = Number(removeLetters)
 
-  // base currency  from API is EUR, so convert the number into SEK here:
-  // 1 EUR divided by todays SEK. Multiply with user input and multiply with the current currency
+  // Base currency from API is in EUR. This means that all values are based on 1 EUR.
+  // 1 EUR divided by todays SEK = how many SEK by each EUR
+  // Take the result and multiply by the input value (convert)
+  // Lastly multiply with toNum (the country currency you are currently on)
+
   const calculateAmount = () => {
     return (1 / sekToNumber) * convert * toNum
   }
 
-  // invoke the calculateAmount function with this constant, and limit to 2 decimals
+  // constant invokes the calucateAmount function and limit result to 2 decimals
   const convertedSEK = calculateAmount().toFixed(2)
 
   return (
