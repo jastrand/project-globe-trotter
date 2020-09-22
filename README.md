@@ -26,6 +26,8 @@ Not to overcomplicate things, I decided to follow the API suggestions provided a
 
 - To be completely honest, I would either change API for the currency or paying for a plan with fixer.io because the free version only allows traffic over HTTP. I really wanted to deploy this project and send you a live version of it - However, Netlify which is the service I have been using a lot only serves content over HTTPS. I managed to have the site deployed, however one of the main features "Currency Converter" is not working as it’s logic is based on the fetch from an HTTP API. This is probably something I should have noticed much earlier in the process. You can view everything else apart from that feature here: https://youthful-roentgen-968461.netlify.app/
 
+- Design fixes like the country flags are not looking great when they are rectangular or in different sizes, Sweden for example. 
+
 ## The requirements
 Create a simple web interface using React which allows users to: 
 
