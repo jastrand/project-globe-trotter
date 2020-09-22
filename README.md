@@ -23,7 +23,7 @@ Not to overcomplicate things, I decided to follow the API suggestions provided a
 
 - Loading state for a better user experience if the API responses are slow. 
 
-- To be completely honest, I would either change API for the currency or paying for a plan with fixer.io because the free version only allows traffic over HTTP. I really wanted to deploy this project and send you a live version of it - However, Netlify which is the service I have been using a lot only serves content over HTTPS. I managed to have the site deployed, however one of the main features the currency converter is not working as it’s logic is based on the fetch from an HTTP API. (https://youthful-roentgen-968461.netlify.app/)
+- To be completely honest, I would either change API for the currency or paying for a plan with fixer.io because the free version only allows traffic over HTTP. I really wanted to deploy this project and send you a live version of it - However, Netlify which is the service I have been using a lot only serves content over HTTPS. I managed to have the site deployed, however one of the main features "Currency Converter" is not working as it’s logic is based on the fetch from an HTTP API. (https://youthful-roentgen-968461.netlify.app/) - I noticed this way too late in the process. 
 
 ## The requirements
 Create a simple web interface using React which allows users to: 
