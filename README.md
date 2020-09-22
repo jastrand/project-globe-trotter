@@ -1,6 +1,6 @@
 # Project Globetrotter
 
-Welcome to Globetrotter! This app lets you search for countries, click on each country to explore details about the specific country like population and capital. The app also offers daily currency exchange from SEK to any given currency. 
+Welcome to Globetrotter! This app lets you search for countries, click on each country to explore details like population and capital. The app also offers daily currency exchange from SEK to any given currency. 
 
 ## Run the code
 1) Git clone
