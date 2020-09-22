@@ -1,4 +1,4 @@
-# Project Globetrotter
+# Project Globetrotter 🌎
 
 Welcome to Globetrotter! This app lets you search for countries, click on each country to explore details like population and capital. The app also offers daily currency exchange from SEK to any given currency. 
 
