@@ -28,7 +28,7 @@ export const CountryList = () => {
     dispatch(getCountryList())
   }, [dispatch, countries])
 
-  // filiter the list of countries depending on the searchWord state
+  // filter the list of countries depending on the searchWord state
   // toLowerCase so users can search both in upper- and lowercase.
   useEffect(() => {
     setFilteredList(
