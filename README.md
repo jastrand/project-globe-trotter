@@ -30,6 +30,8 @@ Not to overcomplicate things, I decided to follow the API suggestions provided a
 
 - Not being able to fully depoy the site also gave me no choice but storing my key in public, since the .env won't follow when you clone this repo. I know this is very bad practice. 
 
+- Styling could be improved when country names are long. 
+
 ## The requirements
 Create a simple web interface using React which allows users to: 
 
