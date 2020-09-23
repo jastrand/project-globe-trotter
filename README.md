@@ -28,6 +28,8 @@ Not to overcomplicate things, I decided to follow the API suggestions provided a
 
 - Design fixes like the country flags are not looking great when they are rectangular or in different sizes, Sweden for example. 
 
+- Not being able to fully depoy the site also gave me no choice but storing my key in public, since the .env won't follow when you clone this repo. I know this is very bad practice. 
+
 ## The requirements
 Create a simple web interface using React which allows users to: 
 
