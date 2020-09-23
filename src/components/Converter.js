@@ -13,7 +13,7 @@ export const Converter = ({ code, name, currencyArr }) => {
   // filiteredArray returns example: [SEK, 10.404] so keep only the number:
   const arr = filiteredArray.toString().substring(4)
 
-  // format to a number in order to do math
+  // format to a number in order to do some math
   const toNum = Number(arr)
 
   return (
